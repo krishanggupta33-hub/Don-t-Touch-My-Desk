@@ -1,0 +1,64 @@
+import processing.serial.*;
+Serial myPort;
+String data = "";
+int angle, distance;
+
+void setup() {
+  size(800, 450); // The size of the radar window
+  
+ 
+  myPort = new Serial(this, "COM6", 9600);
+  myPort.bufferUntil('.');
+}
+
+void draw() {
+  fill(0, 10); 
+  rect(0, 0, width, height);
+  
+  pushMatrix();
+  translate(width/2, height); 
+  
+  
+  noFill();
+  stroke(0, 255, 0, 50);
+  strokeWeight(2);
+  arc(0, 0, 600, 600, PI, TWO_PI);
+  arc(0, 0, 400, 400, PI, TWO_PI);
+  arc(0, 0, 200, 200, PI, TWO_PI);
+  
+  // Draw the Sweeping Line
+  float rad = radians(angle);
+  float lineX = -400 * cos(rad);
+  float lineY = -400 * sin(rad);
+  
+  stroke(0, 255, 0); 
+  line(0, 0, lineX, lineY);
+  
+
+  if (distance < 40) {
+    float objDistance = map(distance, 0, 40, 0, 400);
+    float objX = -objDistance * cos(rad);
+    float objY = -objDistance * sin(rad);
+    
+    fill(255, 0, 0); 
+    noStroke();
+    ellipse(objX, objY, 15, 15);
+  }
+  popMatrix();
+}
+
+
+void serialEvent(Serial myPort) {
+  data = myPort.readStringUntil('.');
+  if (data != null) {
+
+    data = data.replace(".", "").trim(); 
+    
+    int commaIndex = data.indexOf(',');
+    if (commaIndex > 0) {
+    
+      angle = int(data.substring(0, commaIndex));
+      distance = int(data.substring(commaIndex + 1));
+    }
+  }
+}
