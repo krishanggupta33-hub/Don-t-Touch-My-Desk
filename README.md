@@ -38,4 +38,8 @@ The radar is displayed using the Processing software, and the coding was done in
 
 
 AI usage
-Used AI only for debugging help.
+Used AI only for debugging.
+
+**circuit diagram**
+
+<img width="1084" height="706" alt="image" src="https://github.com/user-attachments/assets/e773ff86-0784-4f33-9e28-5fbd438732ef" />
