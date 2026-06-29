@@ -1,0 +1,9 @@
+ Bill of Materials (BOM)
+
+| Component | Quantity | Description |
+
+| Arduino Uno R3 | 1 | The main microcontroller running the logic. |
+| HC-SR04 Ultrasonic Sensor | 1 | Detects when someone gets too close to the desk. |
+| Active Buzzer | 1 | Sounds the alarm. |
+| Jumper Wires (M/M) | ~10 | Connects the components on the breadboard. |
+| Half-size Breadboard | 1 | Used for prototyping the circuit. |
