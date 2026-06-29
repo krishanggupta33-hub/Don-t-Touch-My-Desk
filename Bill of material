@@ -1,9 +1,14 @@
- Bill of Materials (BOM)
+Bill of Materials (BOM)
 
-| Component | Quantity | Description |
+| Qty | Component | Purpose |
 
-| Arduino Uno R3 | 1 | The main microcontroller running the logic. |
-| HC-SR04 Ultrasonic Sensor | 1 | Detects when someone gets too close to the desk. |
-| Active Buzzer | 1 | Sounds the alarm. |
-| Jumper Wires (M/M) | ~10 | Connects the components on the breadboard. |
-| Half-size Breadboard | 1 | Used for prototyping the circuit. |
+| 1 | Arduino Uno R3 | The main microcontroller running the radar and alarm logic. |
+| 1 | HC-SR04 Ultrasonic Sensor | Mounted on the servo to sweep and detect distance. |
+| 1 | Micro Servo Motor | Sweeps 180 degrees to create the radar perimeter. |
+| 1 | Piezo Buzzer | Sounds a warning beep or continuous breach alarm. |
+| 1 | Green LED | Visual indicator for standby/safe mode. |
+| 1 | Yellow LED | Visual indicator for an initial perimeter warning. |
+| 1 | Red LED | Visual indicator for a close-proximity breach. |
+| 3 | 220Ω Resistors | Protects the LEDs from burning out. |
+| 1 | Breadboard | Routes power and ground connections. |
+| 22 | Jumper Wires | Connects components to the Arduino pins. |
